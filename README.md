@@ -1,2 +1,2 @@
 # WCL
-Windows Console Library
+Windows Console Library for Visual C++
