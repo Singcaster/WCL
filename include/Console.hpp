@@ -14,16 +14,17 @@ private:
 	static CONSOLE_SCREEN_BUFFER_INFO consoleScreenBufferInformations;
 
 public:
-	enum Color { Black = 0, Blue, Green, Cyan, Red, Magenta, Brown, Gray = 8, Yellow = 14, White = 15 };
+	enum class Color { Black, Blue, Green, Aqua, Red, Purple, Yellow, White, Gray, LightBlue, LightGreen, LightAqua, LightRed, LightPurple, LightYellow, BrightWhite };
 
 	static void clear();
 	static unsigned long getConsoleMode();
 	static string getLine();
 	static bool isHandling();
-	static void print(const Color& color, const string& line);
-	static void printLine(const Color& color, const string& line);
+	static void print(const string& text);
+	static void printLine(const string& text);
 	static int readConsoleASCII(char* characters, const unsigned long& characterCount, unsigned long* readCount);
 	static void setCodePage(const unsigned int& codePage);
+	static void setColor(const Color& color);
 	static void setConsoleMode(const unsigned long& consoleMode);
 	static void setColumn(const short& column);
 	static void setCtrlHandler(int(*ctrlHandler)(unsigned long));
